@@ -2,13 +2,13 @@ let groupedList = [];
 let filtered = [];
 let currentPage = 1;
 let perPage = 4; // show rows per page
-const list = document.getElementById("listGroup");
-const pagination = document.getElementById("pagination");
+let list;
+let pagination;
 
 function initTransfer() {
 
-    const list = document.getElementById("listGroup");
-    const pagination = document.getElementById("pagination");
+    let list = document.getElementById("listGroup");
+    let pagination = document.getElementById("pagination");
 
     //  Search filter (resets pages)
     document.getElementById("searchBox").addEventListener("input", searchContact);
