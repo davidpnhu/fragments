@@ -2,7 +2,6 @@
 
 // Enhanced fragment loader with error handling
 function loadFragment(id, file, callback) {
-  console.log(id);
   fetch(file)
     .then(response => {
       if (!response.ok) {
@@ -25,11 +24,8 @@ function loadFragment(id, file, callback) {
 }
 
 
-// ✅ Load all fragments
+// Load all fragments
 loadFragment("header", "fragments/header.html", initHeader);
 loadFragment("footer", "fragments/footer.html");
 loadFragment("login", "fragments/login.html");
 loadFragment("main", "fragments/main.html");
-loadFragment("dialer", "fragments/dialer.html");
-loadFragment("agent", "fragments/agent.html");
-loadFragment("transfer", "fragments/transfer.html");
