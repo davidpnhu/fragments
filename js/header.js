@@ -25,6 +25,27 @@ function initHeader() {
 }
 
 
+function getURL() {
+  var url = $('#api').val() || "https://canbs-ccx-pub.internal.bloodservices.ca:8445/finesse/api/";
+  return url;
+}
+
+function getAuth() {
+  if (cred)
+    return cred;
+  //otherwise
+  var auth;
+  if ($('#pwd')) {
+    auth = btoa($(ui_username).val() + ":" + $(ui_pwd).val()); // Base64 encode
+    cred = auth;
+  }
+  return auth;
+}
+
+function getAgentId() {
+  return loginId;
+}
+
 function callFinesse(url, method, xmlBody, successHandler, errorHandler) {
 
   var auth = getAuth();
