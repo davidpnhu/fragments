@@ -4,12 +4,12 @@ function initTransfer() {
     //  Search filter (resets pages)
       document.getElementById("searchBox").addEventListener("input", searchContact);
 
+      document.getElementById("rowsSelect")
+    .addEventListener("change", handleRowsChange);
 
 }
 
 
-document.getElementById("rowsSelect")
-    .addEventListener("change", handleRowsChange);
 
 function handleRowsChange(event) {
     const value = event.target.value;
