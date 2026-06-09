@@ -72,7 +72,6 @@ function successContactList(data) {
       let description = $(this).find("description").text();
       let phoneNumber = $(this).find("phoneNumber").text();
 
-        debugger;
       // add to list
       groupedList.push({
         group: phoneBook,
