@@ -13,5 +13,5 @@ function loadFragment(id, file, callback) {
 // ✅ Load all fragments
 loadFragment("header", "fragments/header.html", initHeader);
 loadFragment("footer", "fragments/footer.html");
-loadFragment("login", "fragments/login.html", initLogin);
+loadFragment("login", "fragments/login.html");
 loadFragment("main", "fragments/main.html");
