@@ -7,8 +7,8 @@ let pagination;
 
 function initTransfer() {
 
-    let list = document.getElementById("listGroup");
-    let pagination = document.getElementById("pagination");
+    list = document.getElementById("listGroup");
+    pagination = document.getElementById("pagination");
 
     //  Search filter (resets pages)
     document.getElementById("searchBox").addEventListener("input", searchContact);
