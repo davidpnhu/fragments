@@ -1,0 +1,103 @@
+<div class="container py-4">
+    <div class="row g-4">
+
+
+
+
+        <!-- Card 1 -->
+        <div class="col-md-4">
+            <div class="card fiori-card p-3">
+                <div class="d-flex align-items-center mb-3">
+                    <div class="fiori-icon me-3"><i class="bi-display"></i></div>
+                    <div class="fiori-header">State</div>
+                </div>
+
+
+
+
+                <!-- Select Button name="uiState" id="uiState"-->
+                <button id="dropdownBtn" class="btn btn-outline-primary dropdown-toggle w-100 text-start"
+                    data-bs-toggle="dropdown">
+                    <i class="bi bi-list me-2"></i> Set Agent State
+                </button>
+
+                <!-- Dropdown Menu -->
+                <ul id="menuState" class="dropdown-menu w-100">
+
+                    <li>
+                        <a class="dropdown-item d-flex align-items-center" href="#" onclick="selectItem(this)"
+                            data-value="">
+                            <i class="bi bi-person-x me-2 text-danger"></i>
+                            Not Ready
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="dropdown-item d-flex align-items-center" href="#" onclick="selectItem(this)"
+                            data-value="READY">
+                            <i class="bi bi-person-check me-2 text-success"></i>
+                            Ready
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="dropdown-item d-flex align-items-center" href="#" onclick="selectItem(this)"
+                            data-value="40">
+                            <i class="bi bi-person-walking me-2 text-danger"></i>
+                            Break/Lunch
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="dropdown-item d-flex align-items-center" href="#" onclick="selectItem(this)"
+                            data-value="42">
+                            <i class="bi bi-person-bounding-box me-2 text-danger"></i>
+                            Personal
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="dropdown-item d-flex align-items-center" href="#" onclick="selectItem(this)"
+                            data-value="43">
+                            <i class="bi bi-people me-2 text-danger"></i>
+                            Meeting
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="dropdown-item d-flex align-items-center" href="#" onclick="selectItem(this)"
+                            data-value="44">
+                            <i class="bi bi-person-video me-2 text-danger"></i>
+                            Training
+                        </a>
+                    </li>
+
+
+                </ul>
+            </div>
+
+        </div>
+        <!-- End Card -->
+
+        <!-- Card 2 -->
+        <div id="uiControls" class="col-md-4">
+            <div class="card fiori-card p-3">
+                <div class="d-flex align-items-center mb-3">
+                    <div class="fiori-icon me-3"><i class="bi bi-mic"></i></div>
+                    <div class="fiori-header">Call Controls</div>
+                </div>
+
+                <!-- <span   class="ui-icon ui-icon-zoomin btn-icon"></span>-->
+                <div class="form-row"><button id="Accept" onClick="handleAnswer()" class=" btn btn-fiori"><i
+                            class="bi bi-arrow-bar-left me-1"></i>Display Caller's
+                        Account</button></div>
+                <div class="form-row"><button id="End" onClick="handleEnd()" class=" btn btn-fiori"><i
+                            class="bi bi-telephone-x me-1"></i>End Call</button></div>
+
+
+            </div>
+        </div>
+        <!-- End Card -->
+
+    </div>
+</div>

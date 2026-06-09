@@ -1,0 +1,40 @@
+<div class="container mt-4">
+
+
+    <div class="card shadow">
+
+        <!-- Header + Search -->
+        <div class="card-header sticky-header">
+            <input type="text" id="searchBox" class="form-control" placeholder="Search contacts...">
+        </div>
+
+        <!-- List -->
+        <ul id="listGroup" class="list-group list-group-flush"></ul>
+
+
+        <!-- Pagination -->
+        <div class="card-footer d-flex justify-content-between align-items-center flex-wrap gap-2">
+
+            <!-- ✅ Show Rows Selector -->
+            <div>
+                <label class="me-2">Show:</label>
+                <select id="rowsSelect" class="form-select form-select-sm d-inline-block w-auto">
+                    <option value="4">4</option>
+                    <option value="8">8</option>
+                    <option value="12">12</option>
+                    <option value="all">All</option>
+                </select>
+            </div>
+
+
+            <nav>
+                <ul id="pagination" class="pagination justify-content-center mb-0"></ul>
+            </nav>
+        </div>
+    </div>
+
+
+
+
+
+</div>

@@ -1,98 +1,19 @@
+   /* Disable responsiveness */
+    body {
+      min-width: 300px;
+      /* forces desktop layout */
+    }
 
+    /* Fixed height container */
+    .tab-content {
+      height: 70vh;
+      /*fixed height */
+      padding: 15px;
+      overflow-y: auto;
+      /* scroll if content overflows */
+    }
 
-    /* Base navbar */
-.fiori-navbar {
-  background: #f7f7f7;
-  border-bottom: 3px solid #0a6ed1; /* SAP blue */
-  font-family: "72", Arial, sans-serif;
-}
-
-/* Brand */
-.brand-text {
-  font-size: 1.05rem;
-  color: #32363a;
-  font-weight: 600;
-}
-
-/* Links */
-.fiori-navbar .nav-link {
-  color: #32363a;
-  font-size: 0.9rem;
-  padding: 8px 14px;
-}
-
-.fiori-navbar .nav-link:hover {
-  background: #eaecee;
-  border-radius: 4px;
-}
-
-/* Active item */
-.fiori-navbar .nav-link.active {
-  border-bottom: 2px solid #0a6ed1;
-  font-weight: 600;
-}
-
-/* Dropdown */
-.dropdown-menu {
-  border-radius: 8px;
-  border: 1px solid #ddd;
-  font-size: 0.85rem;
-}
-
-.dropdown-item:hover {
-  background: #f0f8ff;
-}
-
-/* Search */
-.fiori-search {
-  border-radius: 20px;
-  border: 1px solid #ccc;
-  padding-left: 10px;
-}
-
-/* User circle */
-.user-circle {
-  width: 32px;
-  height: 32px;
-  background: #0a6ed1;
-  color: white;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.8rem;
-}
-/* Notification badge */
-.notification-badge {
-  position: absolute;
-  top: 2px;
-  right: 2px;
-  background: red;
-  color: white;
-  font-size: 0.6rem;
-  padding: 2px 6px;
-  border-radius: 50%;
-}
-
-/* Dropdown panel */
-.notification-dropdown {
-  width: 280px;
-  border-radius: 10px;
-  font-size: 0.85rem;
-}
-
-/* Notification item */
-.notif-title {
-  font-weight: 500;
-  color: #32363a;
-}
-
-.notif-time {
-  color: #888;
-  font-size: 0.75rem;
-}
-
-/* Hover */
-.notification-dropdown .dropdown-item:hover {
-  background: #f0f8ff;
-}
+     .form-control:hover {
+      box-shadow: 0 0 8px rgba(13, 110, 253, 0.5);
+      /* blue glow */
+    }
