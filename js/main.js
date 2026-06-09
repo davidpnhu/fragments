@@ -17,4 +17,4 @@ loadFragment("login", "fragments/login.html");
 loadFragment("main", "fragments/main.html");
 loadFragment("dialer", "fragments/dialer.html");
 loadFragment("agent", "fragments/agent.html");
-loadFragment("transfer", "fragments/transfer.html", initTransfer);
+loadFragment("transfer", "fragments/transfer.html");
