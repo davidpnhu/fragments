@@ -100,6 +100,7 @@ function successContactList(data) {
 }
 
 function renderList() {
+    debugger;
   list.innerHTML = "";
 
   const start = (currentPage - 1) * perPage;
