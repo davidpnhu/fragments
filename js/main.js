@@ -2,6 +2,7 @@
 
 // Enhanced fragment loader with error handling
 function loadFragment(id, file, callback) {
+  console.log(id);
   fetch(file)
     .then(response => {
       if (!response.ok) {
