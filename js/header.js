@@ -1,9 +1,4 @@
 function initHeader() {
-  const btn = document.getElementById("menuBtn");
+ //init header
 
-  if (btn) {
-    btn.addEventListener("click", () => {
-      alert("Menu clicked!");
-    });
-  }
 }

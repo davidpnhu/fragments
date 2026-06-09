@@ -1,4 +1,73 @@
-<div class="header">
-  <h3>My Website</h3>
-  <button id="menuBtn" class="btn btn-primary">Menu</button>
-</div>
+ <!-- Header -->
+  <nav class="navbar navbar-expand fiori-navbar">
+    <div class="container-fluid">
+
+      <!--   Logo -->
+
+      <a class="navbar-brand d-flex align-items-center" href="#">
+       
+        <span class="brand-text">CBS Finesse Integration</span>
+      </a>
+
+      <!-- Toggle -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Menu -->
+      <div class="collapse navbar-collapse" id="mainMenu">
+
+        <ul class="navbar-nav ms-4">
+
+          <!--  <li class="nav-item">
+            <a class="nav-link active" href="#">Transfer</a>
+          </li> -->
+
+          <!-- Dropdown -->
+          <!--  <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+              Applications
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Finance</a></li>
+              <li><a class="dropdown-item" href="#">HR</a></li>
+              <li><a class="dropdown-item" href="#">Supply Chain</a></li>
+            </ul>
+          </li> -->
+
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="#">Reports</a>
+          </li> -->
+
+        </ul>
+
+        <!-- Right Side -->
+
+        <div class="d-flex align-items-center ms-auto">
+
+
+          <ul class="navbar-nav ms-auto align-items-center">
+
+
+            <!-- User Menu -->
+            <li class="nav-item dropdown" id="userMenu">
+              <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" data-bs-toggle="dropdown">
+                <i class="bi bi-person-circle me-2"></i> Sign Out
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="#" onClick="handleLogOut(94)">Break</a></li>
+                <li><a class="dropdown-item" href="#" onClick="handleLogOut(96)">End of Shift</a></li>
+                <li><a class="dropdown-item" href="#" onClick="handleLogOut(95)">Lunch</a></li>
+                <li><a class="dropdown-item" href="#" onClick="handleLogOut(93)">Meeting</a></li>
+                <!-- <li>
+                  <hr class="dropdown-divider">
+                </li> -->
+
+              </ul>
+            </li>
+
+          </ul>
+
+        </div>
+      </div>
+  </nav>

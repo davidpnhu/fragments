@@ -1,0 +1,4 @@
+function initLogin() {
+ //init login
+
+}
