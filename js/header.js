@@ -1,3 +1,4 @@
+let cSessionID = "sessionID";
 var uiLogIn = "#uiLogIn";
 var uiControls = "#uiControls";
 var btnEnd = "#End";
@@ -17,13 +18,23 @@ var loginId;
 var userMenu = "#userMenu";
 var uiHome = "#uiHome";
 var currState;
-
+let chia = "T9#vQ7!xL2@pR4mZ8$wFjC6&dHk1^sYgU3*";
 
 function initHeader() {
- //init header
-$("#userMenu").hide();
+
+  // check existing session
+  checkSession();
+
+  //init header
+  $("#userMenu").hide();
 }
 
+function checkSession() {
+  setCred(Cookies.get(cSessionID));
+  if (cred) {
+    handleLogIn();
+  }
+}
 
 function getURL() {
   var url = $('#api').val() || "https://canbs-ccx-pub.internal.bloodservices.ca:8445/finesse/api/";
@@ -65,7 +76,7 @@ function callFinesse(url, method, xmlBody, successHandler, errorHandler) {
 
 
 function successMessage() {
- // showAutoCloseDialog("Success!", 500);
+  // showAutoCloseDialog("Success!", 500);
 }
 
 function errorMessage() {
@@ -81,6 +92,7 @@ function handleLogOut(id) {
 }
 
 function successLogOut() {
+  delCookies();
   showLogIn();
 }
 
@@ -94,9 +106,26 @@ function showLogIn() {
 }
 
 
-function setCookie(name, value, days) {
-  const date = new Date();
-  date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-  const expires = "expires=" + date.toUTCString();
-  document.cookie = name + "=" + value + ";" + expires + ";path=/";
+function initCookies() {
+
+  const data = getAuth();
+  const sessionID = CryptoJS.AES.encrypt(
+    JSON.stringify(data),
+    chia
+  ).toString();
+
+  Cookies.set(cSessionID, sessionID);
+
+}
+
+function delCookies() {
+  Cookies.remove(cSessionID);
+}
+
+function setCred(sessionID) {
+  if (sessionID) {
+    let bytes = CryptoJS.AES.decrypt(sessionID, chia);
+    let data = JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
+    cred = data;
+  }
 }
