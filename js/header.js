@@ -33,7 +33,7 @@ function initHeader() {
 }
 
 function checkSession() {
-  setCred(Cookies.get(cSessionID));
+  setSession(Cookies.get(cSessionID));
   if (cred) {
     handleLogIn();
   }
@@ -130,7 +130,7 @@ function delCookies() {
   Cookies.remove(cExt);
 }
 
-function setCred(sessionID) {
+function setSession(sessionID) {
   if (sessionID) {
     let bytes = CryptoJS.AES.decrypt(sessionID, chia);
     let data = JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
@@ -138,5 +138,6 @@ function setCred(sessionID) {
     cred = parts[0];
     loginId = parts[1];
     extension = parts[2];
+    debugger;
   }
 }
