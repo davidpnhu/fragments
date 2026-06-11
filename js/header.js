@@ -21,7 +21,7 @@ var currState;
 
 function initHeader() {
  //init header
-
+$("#userMenu").hide();
 }
 
 
