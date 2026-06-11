@@ -8,7 +8,7 @@ var btnAccept = "#Accept";
 var callerId = "#callerID";
 var uiPayload = "#uiPayload";
 var cred = "";
-var extension = getExtension();
+var extension ;
 var noDialog = "no dialog currently.";
 var dialog;
 var ANI;
@@ -21,6 +21,7 @@ var userMenu = "#userMenu";
 var uiHome = "#uiHome";
 var currState;
 let chia = "T9#vQ7!xL2@pR4mZ8$wFjC6&dHk1^sYgU3*";
+let cat ="c@t";
 
 function initHeader() {
 
@@ -53,10 +54,6 @@ function getAuth() {
     cred = auth;
   }
   return auth;
-}
-
-function getExtension() {
-  return Cookies.get(cExt);
 }
 
 function getAgentId() {
@@ -118,14 +115,13 @@ function showLogIn() {
 
 function initCookies() {
 
-  const data = getAuth() + "nh@n" + loginId;
+  const data = getAuth() + cat + loginId + cat + extension;
   const sessionID = CryptoJS.AES.encrypt(
     JSON.stringify(data),
     chia
   ).toString();
 
   Cookies.set(cSessionID, sessionID, { expires: cExpiry });
-  Cookies.set(cExt, extension, { expires: cExpiry });
 
 }
 
@@ -138,8 +134,9 @@ function setCred(sessionID) {
   if (sessionID) {
     let bytes = CryptoJS.AES.decrypt(sessionID, chia);
     let data = JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
-    let parts = data.split("nh@n");
+    let parts = data.split(cat);
     cred = parts[0];
     loginId = parts[1];
+    extension = parts[2];
   }
 }
