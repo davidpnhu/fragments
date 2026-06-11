@@ -1,4 +1,6 @@
 let cSessionID = "sessionID";
+let cExt = "extension";
+let cExpiry = 1; // 1 day
 var uiLogIn = "#uiLogIn";
 var uiControls = "#uiControls";
 var btnEnd = "#End";
@@ -6,7 +8,7 @@ var btnAccept = "#Accept";
 var callerId = "#callerID";
 var uiPayload = "#uiPayload";
 var cred = "";
-var extension = "";
+var extension = getExtension();
 var noDialog = "no dialog currently.";
 var dialog;
 var ANI;
@@ -53,6 +55,10 @@ function getAuth() {
   return auth;
 }
 
+function getExtension() {
+  return Cookies.get(cExt);
+}
+
 function getAgentId() {
   return loginId;
 }
@@ -97,6 +103,7 @@ function successLogOut() {
 }
 
 function showLogIn() {
+  delCookies();
   $(uiHome).hide();
   $(userMenu).hide();
   $(ui_username).val("");
@@ -114,12 +121,14 @@ function initCookies() {
     chia
   ).toString();
 
-  Cookies.set(cSessionID, sessionID);
+  Cookies.set(cSessionID, sessionID, { expires: cExpiry });
+  Cookies.set(cExt, extension, { expires: cExpiry });
 
 }
 
 function delCookies() {
   Cookies.remove(cSessionID);
+  Cookies.remove(cExt);
 }
 
 function setCred(sessionID) {
