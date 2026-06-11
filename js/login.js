@@ -19,8 +19,6 @@ function handleLogIn() {
 }
 
 function successLogIn(data) {
-    debugger;
-    loginId = $(ui_username).val();
     initCookies();
     successMessage();
     $(uiLogIn).hide();
