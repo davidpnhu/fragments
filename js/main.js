@@ -1,5 +1,3 @@
-// ✅ Generic fragment loader
-
 // Enhanced fragment loader with error handling
 function loadFragment(id, file, callback) {
   fetch(file)
