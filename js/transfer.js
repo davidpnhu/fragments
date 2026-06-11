@@ -101,7 +101,7 @@ function successContactList(data) {
 
 function renderList() {
     debugger;
-    if (list) {
+    if (!list) {
         list = document.getElementById("listGroup");
         pagination = document.getElementById("pagination");
     }
