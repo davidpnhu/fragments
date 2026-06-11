@@ -71,3 +71,12 @@ function successMessage() {
 function errorMessage() {
   showAutoCloseDialog("Failed!", 500);
 }
+
+function showLogIn() {
+  $(uiHome).hide();
+  $(userMenu).hide();
+  $(ui_username).val("");
+  $(ui_pwd).val("");
+  $(ui_ext).val("");
+  $(uiLogIn).show();
+}
