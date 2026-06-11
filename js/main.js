@@ -15,6 +15,7 @@ function loadFragment(id, file, callback) {
     })
     .catch(error => {
       console.error("Error loading fragment:", error);
+      console.error("Error loading fragment id:", id);
       document.getElementById(id).innerHTML = `
             <div class="error">
               Failed to load ${file}
