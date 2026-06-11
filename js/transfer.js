@@ -2,13 +2,12 @@ let groupedList = [];
 let filtered = [];
 let currentPage = 1;
 let perPage = 4; // show rows per page
-let list;
-let pagination;
+let list = document.getElementById("listGroup");
+let pagination = document.getElementById("pagination");
 
 function initTransfer() {
 
-    list = document.getElementById("listGroup");
-    pagination = document.getElementById("pagination");
+
 
     //  Search filter (resets pages)
     document.getElementById("searchBox").addEventListener("input", searchContact);
@@ -102,6 +101,10 @@ function successContactList(data) {
 
 function renderList() {
     debugger;
+    if (list) {
+        list = document.getElementById("listGroup");
+        pagination = document.getElementById("pagination");
+    }
     list.innerHTML = "";
 
     const start = (currentPage - 1) * perPage;
