@@ -7,7 +7,7 @@ function initLogin() {
 function handleLogIn() {
     // LogIn
     debugger;
-    var url = getURL() + "User/" + getAgentId(); ;
+    var url = getURL() + "User/" + getAgentId(); 
     if (!extension) {
         extension = $('#ext').val();
     }

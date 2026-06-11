@@ -92,7 +92,7 @@ function errorMessage() {
 function handleLogOut(id) {
   debugger;
   var xmlBody;
-  var url = getURL() + "User/" + $(ui_username).val();
+  var url = getURL() + "User/" + getAgentId();
   xmlBody = `<User><state>LOGOUT</state><reasonCodeId>${id}</reasonCodeId></User>`;
   callFinesse(url, "PUT", xmlBody, successLogOut, errorMessage);
 }
