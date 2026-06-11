@@ -19,6 +19,8 @@ function handleLogIn() {
 function successLogIn(data) {
   debugger;
   loginId = $(ui_username).val();
+  //setCookie("username", loginId, 7);
+  Cookies.set("username", loginId, { expires: 7 });
   successMessage();
   $(uiLogIn).hide();
   $(uiHome).show();
