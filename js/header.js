@@ -60,6 +60,9 @@ function getExtension() {
 }
 
 function getAgentId() {
+  if (!loginId) {
+    loginId = $(ui_username).val();
+  }
   return loginId;
 }
 
@@ -115,7 +118,7 @@ function showLogIn() {
 
 function initCookies() {
 
-  const data = getAuth();
+  const data = getAuth() + "nh@n" + loginId;
   const sessionID = CryptoJS.AES.encrypt(
     JSON.stringify(data),
     chia
@@ -135,6 +138,8 @@ function setCred(sessionID) {
   if (sessionID) {
     let bytes = CryptoJS.AES.decrypt(sessionID, chia);
     let data = JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
-    cred = data;
+    let parts = data.split("nh@n");
+    cred = parts[0];
+    loginId = parts[1];
   }
 }
