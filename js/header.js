@@ -72,6 +72,18 @@ function errorMessage() {
   showAutoCloseDialog("Failed!", 500);
 }
 
+function handleLogOut(id) {
+  debugger;
+  var xmlBody;
+  var url = getURL() + "User/" + $(ui_username).val();
+  xmlBody = `<User><state>LOGOUT</state><reasonCodeId>${id}</reasonCodeId></User>`;
+  callFinesse(url, "PUT", xmlBody, successLogOut, errorMessage);
+}
+
+function successLogOut() {
+  showLogIn();
+}
+
 function showLogIn() {
   $(uiHome).hide();
   $(userMenu).hide();
