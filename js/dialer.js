@@ -1,8 +1,11 @@
-document.querySelectorAll(".btn-dial").forEach(btn => {
-    btn.addEventListener("click", () => {
-        display.value += btn.textContent;
+function initDialer() {
+    document.querySelectorAll(".btn-dial").forEach(btn => {
+        btn.addEventListener("click", () => {
+            display.value += btn.textContent;
+        });
     });
-});
+
+}
 
 function backspace() {
     let num = $("#display").val().slice(0, -1);
