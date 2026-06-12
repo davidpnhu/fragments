@@ -37,6 +37,9 @@ function checkSession() {
   if (cred) {
     handleLogIn();
   }
+  else {
+    showLogIn();
+  }
 }
 
 function getURL() {
