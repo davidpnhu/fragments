@@ -54,14 +54,12 @@ function searchContact() {
 
 
 function handleContactList() {
-    debugger;
     var xmlBody;
     var url = getURL() + "TeamResource/15/PhoneBooks";
     callFinesse(url, "GET", "", successContactList, errorMessage, "Failed to get contact list");
 }
 
 function successContactList(data) {
-    debugger;
     var rowsContent
     $(data).find("PhoneBook").each(function () {
 
@@ -88,7 +86,6 @@ function successContactList(data) {
 
     });
 
-    debugger;
     //  Sort by group
     groupedList.sort((a, b) => a.group.localeCompare(b.group));
 
@@ -100,7 +97,7 @@ function successContactList(data) {
 }
 
 function renderList() {
-    debugger;
+ 
     if (!list) {
         list = document.getElementById("listGroup");
         pagination = document.getElementById("pagination");
