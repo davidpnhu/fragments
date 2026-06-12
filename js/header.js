@@ -26,11 +26,7 @@ let uiLogs = "#uiLogs";
 
 function initHeader() {
 
-  // check existing session
-  checkSession();
 
-  //init header
-  $("#userMenu").hide();
 }
 
 function checkSession() {
