@@ -35,6 +35,7 @@ function successAnswer(data) {
   var payload = formXMLPayload(parameters);
   handlePostMessage(payload, "XML");
   showEnd();
+  successMessage("Answered call from " + ANI);
 }
 
 function getDialogs() {
@@ -44,7 +45,7 @@ function getDialogs() {
   var agentId = getAgentId();
   var url = getURL() + "User/" + agentId + "/Dialogs";
 
-  callFinesse(url, "GET", "", successDialogs, errorMessage);
+  callFinesse(url, "GET", "", successDialogs, errorMessage("Failed to get dialogs"));
 
 }
 
@@ -60,8 +61,9 @@ function successDialogs(data) {
     var agentId = getAgentId();
     var url = getURL() + "Dialog/" + dialog;
     var xmlBody = "<Dialog><targetMediaAddress>" + extension + "</targetMediaAddress><requestedAction>ANSWER</requestedAction></Dialog>";
-    callFinesse(url, "PUT", xmlBody, successAnswer, errorMessage);
+    callFinesse(url, "PUT", xmlBody, successAnswer, errorMessage("Failed to answer call"));
   }
+  successMessage("Received call from " + ANI);
 }
 
 
@@ -154,7 +156,7 @@ function successEnd() {
   var payload = formXMLPayload(parameters);
   handlePostMessage(payload, "XML");
   dialog = "";
-  successMessage();
+  successMessage("Ended call with " + ANI);
   showControls();
 }
 
@@ -184,12 +186,11 @@ function handleState(sel) {
   else {
     xmlBody = "<User><state>NOT_READY</state><reasonCodeId>" + selState + "</reasonCodeId></User>";
   }
-  callFinesse(url, "PUT", xmlBody, successState, errorMessage);
+  callFinesse(url, "PUT", xmlBody, successState, errorMessage("Failed to update state"));
 
 }
 
 function successState() {
-  //showAutoCloseDialog("Success!", 500);
   var selState = currState;
   if (selState === "READY") {
     showControls();
@@ -198,4 +199,5 @@ function successState() {
   else {
     $(uiControls).hide();
   }
+  successMessage("State changed to " + selState);
 }

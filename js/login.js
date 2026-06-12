@@ -20,7 +20,7 @@ function handleLogIn() {
 
 function successLogIn(data) {
     initCookies();
-    successMessage();
+    successMessage("Logged in as " + getAgentId());
     $(uiLogIn).hide();
     $(uiHome).show();
     $(userMenu).show();
@@ -29,7 +29,7 @@ function successLogIn(data) {
 
 function errorLogIn(err) {
     debugger;
-    errorMessage();
+    errorMessage("Login failed: " + err.statusText);
 }
 
 
@@ -37,5 +37,5 @@ function handleContactList() {
     debugger;
     var xmlBody;
     var url = getURL() + "TeamResource/15/PhoneBooks";
-    callFinesse(url, "GET", "", successContactList, errorMessage);
+    callFinesse(url, "GET", "", successContactList, errorMessage("Failed to get contact list"));
 }

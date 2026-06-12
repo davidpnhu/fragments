@@ -22,6 +22,7 @@ var uiHome = "#uiHome";
 var currState;
 let chia = "T9#vQ7!xL2@pR4mZ8$wFjC6&dHk1^sYgU3*";
 let cat ="c@t";
+let uiLogs = "#uiLog";
 
 function initHeader() {
 
@@ -84,12 +85,12 @@ function callFinesse(url, method, xmlBody, successHandler, errorHandler) {
 }
 
 
-function successMessage() {
-  // showAutoCloseDialog("Success!", 500);
+function successMessage(action) {
+  $("<li><i class='bi bi-check-circle me-2 text-success'></i>" + action + "</li>").appendTo(uiLogs);
 }
 
-function errorMessage() {
-  showAutoCloseDialog("Failed!", 500);
+function errorMessage(action) {
+  $("<li><i class='bi bi-x-circle me-2 text-danger'></i>" + action + "</li>").appendTo(uiLogs);
 }
 
 function handleLogOut(id) {
@@ -97,12 +98,13 @@ function handleLogOut(id) {
   var xmlBody;
   var url = getURL() + "User/" + getAgentId();
   xmlBody = `<User><state>LOGOUT</state><reasonCodeId>${id}</reasonCodeId></User>`;
-  callFinesse(url, "PUT", xmlBody, successLogOut, errorMessage);
+  callFinesse(url, "PUT", xmlBody, successLogOut, errorMessage("Failed to log out"));
 }
 
 function successLogOut() {
   delCookies();
   showLogIn();
+  successMessage("Logged out");
 }
 
 function showLogIn() {
