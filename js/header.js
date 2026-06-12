@@ -116,7 +116,7 @@ function showLogIn() {
 
 
 function initCookies() {
-
+debugger;
   const data = getAuth() + cat + loginId + cat + extension;
   const sessionID = CryptoJS.AES.encrypt(
     JSON.stringify(data),
