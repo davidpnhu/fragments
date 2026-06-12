@@ -30,6 +30,7 @@ function initHeader() {
 }
 
 function checkSession() {
+  debugger;
   setSession(Cookies.get(cSessionID));
   if (cred) {
     handleLogIn();
