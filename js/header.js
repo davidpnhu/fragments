@@ -67,7 +67,6 @@ function getAgentId() {
 function callFinesse(url, method, xmlBody, successHandler, errorHandler,errorMsg) {
 
   var auth = getAuth();
-  $('#api').text(url);
   $.ajax({
     url: url,
     method: method,
@@ -77,7 +76,7 @@ function callFinesse(url, method, xmlBody, successHandler, errorHandler,errorMsg
       "Authorization": "Basic " + auth
     },
     success: successHandler,
-    error: errorHandler(errorMsg)
+    error: errorHandler
   });
 }
 
@@ -86,9 +85,10 @@ function successMessage(action) {
   $("<li><a class='dropdown-item' href='#' ><i class='bi bi-check-circle me-2 text-success'></i>" + action + "</a></li>").appendTo(uiLogs);
 }
 
-function errorMessage(action) {
-  $("<li><a class='dropdown-item' href='#' ><i class='bi bi-x-circle me-2 text-danger'></i>" + action + "</a></li>").appendTo(uiLogs);
+function errorMessage() {
+ // $("<li><a class='dropdown-item' href='#' ><i class='bi bi-x-circle me-2 text-danger'></i>" + action + "</a></li>").appendTo(uiLogs);
 }
+
 
 function handleLogOut(id) {
   debugger;
