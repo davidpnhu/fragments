@@ -95,7 +95,7 @@ function handleLogOut(id) {
   var xmlBody;
   var url = getURL() + "User/" + getAgentId();
   xmlBody = `<User><state>LOGOUT</state><reasonCodeId>${id}</reasonCodeId></User>`;
-  callFinesse(url, "PUT", xmlBody, successLogOut, errorMessage("Failed to log out"));
+  callFinesse(url, "PUT", xmlBody, successLogOut, errorMessage, "Failed to log out");
 }
 
 function successLogOut() {
