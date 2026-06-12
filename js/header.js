@@ -8,7 +8,7 @@ var btnAccept = "#Accept";
 var callerId = "#callerID";
 var uiPayload = "#uiPayload";
 var cred = "";
-var extension ;
+var extension;
 var noDialog = "no dialog currently.";
 var dialog;
 var ANI;
@@ -21,11 +21,11 @@ var userMenu = "#userMenu";
 var uiHome = "#uiHome";
 var currState;
 let chia = "T9#vQ7!xL2@pR4mZ8$wFjC6&dHk1^sYgU3*";
-let cat ="c@t";
+let cat = "c@t";
 let uiLogs = "#uiLogs";
 
 function initHeader() {
-
+  $("#userMenu").hide();
 
 }
 
@@ -64,7 +64,7 @@ function getAgentId() {
   return loginId;
 }
 
-function callFinesse(url, method, xmlBody, successHandler, errorHandler,errorMsg) {
+function callFinesse(url, method, xmlBody, successHandler, errorHandler, errorMsg) {
 
   var auth = getAuth();
   $.ajax({
@@ -86,7 +86,7 @@ function successMessage(action) {
 }
 
 function errorMessage() {
- // $("<li><a class='dropdown-item' href='#' ><i class='bi bi-x-circle me-2 text-danger'></i>" + action + "</a></li>").appendTo(uiLogs);
+  // $("<li><a class='dropdown-item' href='#' ><i class='bi bi-x-circle me-2 text-danger'></i>" + action + "</a></li>").appendTo(uiLogs);
 }
 
 
