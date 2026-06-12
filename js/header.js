@@ -82,11 +82,11 @@ function callFinesse(url, method, xmlBody, successHandler, errorHandler) {
 
 
 function successMessage(action) {
-  $("<li><i class='bi bi-check-circle me-2 text-success'></i>" + action + "</li>").appendTo(uiLogs);
+  $("<li><a class='dropdown-item' href='#' ><i class='bi bi-check-circle me-2 text-success'></i>" + action + "</a></li>").appendTo(uiLogs);
 }
 
 function errorMessage(action) {
-  $("<li><i class='bi bi-x-circle me-2 text-danger'></i>" + action + "</li>").appendTo(uiLogs);
+  $("<li><a class='dropdown-item' href='#' ><i class='bi bi-x-circle me-2 text-danger'></i>" + action + "</a></li>").appendTo(uiLogs);
 }
 
 function handleLogOut(id) {
