@@ -22,7 +22,7 @@ var uiHome = "#uiHome";
 var currState;
 let chia = "T9#vQ7!xL2@pR4mZ8$wFjC6&dHk1^sYgU3*";
 let cat ="c@t";
-let uiLogs = "#uiLog";
+let uiLogs = "#uiLogs";
 
 function initHeader() {
 
