@@ -57,7 +57,7 @@ function handleContactList() {
     debugger;
     var xmlBody;
     var url = getURL() + "TeamResource/15/PhoneBooks";
-    callFinesse(url, "GET", "", successContactList, errorMessage("Failed to get contact list"));
+    callFinesse(url, "GET", "", successContactList, errorMessage, "Failed to get contact list");
 }
 
 function successContactList(data) {

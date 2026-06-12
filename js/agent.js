@@ -45,7 +45,7 @@ function getDialogs() {
   var agentId = getAgentId();
   var url = getURL() + "User/" + agentId + "/Dialogs";
 
-  callFinesse(url, "GET", "", successDialogs, errorMessage("Failed to get dialogs"));
+  callFinesse(url, "GET", "", successDialogs, errorMessage, "Failed to get dialogs");
 
 }
 
@@ -61,7 +61,7 @@ function successDialogs(data) {
     var agentId = getAgentId();
     var url = getURL() + "Dialog/" + dialog;
     var xmlBody = "<Dialog><targetMediaAddress>" + extension + "</targetMediaAddress><requestedAction>ANSWER</requestedAction></Dialog>";
-    callFinesse(url, "PUT", xmlBody, successAnswer, errorMessage("Failed to answer call"));
+    callFinesse(url, "PUT", xmlBody, successAnswer, errorMessage, "Failed to answer call");
   }
   successMessage("Received call from " + ANI);
 }
@@ -186,7 +186,7 @@ function handleState(sel) {
   else {
     xmlBody = "<User><state>NOT_READY</state><reasonCodeId>" + selState + "</reasonCodeId></User>";
   }
-  callFinesse(url, "PUT", xmlBody, successState, errorMessage("Failed to update state"));
+  callFinesse(url, "PUT", xmlBody, successState, errorMessage, "Failed to update state");
 
 }
 

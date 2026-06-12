@@ -64,7 +64,7 @@ function getAgentId() {
   return loginId;
 }
 
-function callFinesse(url, method, xmlBody, successHandler, errorHandler) {
+function callFinesse(url, method, xmlBody, successHandler, errorHandler,errorMsg) {
 
   var auth = getAuth();
   $('#api').text(url);
@@ -77,7 +77,7 @@ function callFinesse(url, method, xmlBody, successHandler, errorHandler) {
       "Authorization": "Basic " + auth
     },
     success: successHandler,
-    error: errorHandler
+    error: errorHandler(errorMsg)
   });
 }
 
